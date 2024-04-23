@@ -36,6 +36,10 @@ struct ButtonView: View {
         .cornerRadius(getButtonSize())
     }
     
+    /*
+     This Function will return Height and Width
+     according to screen width
+     */
     private func getButtonSize() -> CGFloat {
         let screenWidth = UIScreen.main.bounds.width
         let buttonCount: CGFloat = 4

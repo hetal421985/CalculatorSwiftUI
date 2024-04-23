@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
+    
     /// Display Final Result
     @Binding var resultString: String
     
