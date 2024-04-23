@@ -17,7 +17,7 @@ struct ResultView: View {
             .padding()
             .foregroundColor(.white)
             .frame(maxWidth: .infinity, alignment: .trailing)
-            .font(.system(size: 88, weight: .light))
+            .font(.system(size: 60, weight: .light))
             .lineLimit(1)
             .minimumScaleFactor(0.2)
     }

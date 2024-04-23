@@ -26,7 +26,7 @@ struct ButtonView: View {
              .frame(width: getButtonSize(),height: getButtonSize())
              .background(buttonType.backgroundColor)
             
-             .font(.system(size: 32, weight: .medium))
+             .font(.system(size: 28, weight: .medium))
             .foregroundColor(buttonType.foregroundColor)
             .overlay(
              RoundedRectangle(cornerRadius: getButtonSize())
