@@ -16,14 +16,7 @@ struct CalculatorView: View {
     /// Final Result String
     @State var resultString: String = "0"
     
-    /// Operation Performed
-    @State var operationPerformed: Bool = false
-    
-    /// Equal Button Pressed
-    @State var equalPressed: Bool = false
-    
-    /// Equation
-    @State var equation: String = ""
+  
     
     var body: some View {
         VStack {
@@ -45,58 +38,14 @@ struct CalculatorView: View {
         .padding(Constants.padding)
         .background(.black)
     }
-    
     /*
      This Function Will Calculate Final Result
      */
     fileprivate func calculateResult(id: Int) {
-      
-        switch id {
-        case 10:
-            /// All Clear
-            equation = ""
-            resultString = "0"
-        case 11:
-            /// Addition
-            equation = equation + resultString + "+"
-            operationPerformed = true
-        case 12:
-            /// Substraction
-            equation = equation + resultString + "-"
-            operationPerformed = true
-        case 13:
-            /// Multiplication
-            equation = equation + resultString + "*"
-            operationPerformed = true
-        case 14:
-            /// Division
-            equation = equation + resultString + "/"
-            operationPerformed = true
-        case 15:
-            /// Equal
-            equation = equation.appending(resultString)
-            let expr = NSExpression(format: equation)
-            if let result = expr.expressionValue(with: nil, context: nil) as? Double {
-                resultString = "\(Int(result))"
-                equation = ""
-                operationPerformed = false
-                equalPressed = true
-            }
-        default:
-            /// Restore  Result String To "0"
-            if equalPressed || operationPerformed{
-                equalPressed = false
-                operationPerformed = false
-                resultString = "0"
-            }
-            /// Number From 0 to 9
-            if resultString != "0" {
-                resultString = resultString.appending("\(id)")
-            } else {
-                resultString = "\(id)"
-            }
-        }
+        CalculatorData.sharedInstance.getCalculatedResult(id: id)
+        resultString = CalculatorData.sharedInstance.resultString
     }
+    
 }
 
 #Preview {
