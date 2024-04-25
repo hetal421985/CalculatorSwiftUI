@@ -38,4 +38,45 @@ final class CalculatorSwiftUIUITests: XCTestCase {
             }
         }
     }
+    
+    /*
+     This function will test UI of all digit from 0 to 9
+     */
+    func testUIForAllDigitButton() {
+        
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        for Index in 0...9 {
+            let digit = app.buttons["\(Index)"]
+            XCTAssertEqual(digit.label, "\(Index)")
+        }
+    }
+    
+    /*
+     This function will test UI of all airthmatic operation
+     */
+    func testUIForAllAirthmaticButton() {
+        
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        for Index in 11...15 {
+            let operation = app.buttons["\(Index)"]
+            switch Index {
+            case 11:
+                XCTAssertEqual(operation.label, "+")
+            case 12:
+                XCTAssertEqual(operation.label, "−")
+            case 13:
+                XCTAssertEqual(operation.label, "×")
+            case 14:
+                XCTAssertEqual(operation.label, "÷")
+            default:
+                XCTAssertEqual(operation.label, "=")
+            }
+        }
+    }
 }
