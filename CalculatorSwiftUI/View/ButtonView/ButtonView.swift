@@ -33,6 +33,7 @@ struct ButtonView: View {
               .stroke(Color.clear, lineWidth: 1)
             )
         }
+        .accessibilityIdentifier("\(buttonType.id)")
         .cornerRadius(getButtonSize())
     }
     
