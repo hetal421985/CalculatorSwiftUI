@@ -1,6 +1,7 @@
 **Calculator SwiftUI**
 
-This application is developed in SwiftUI, demonstrating simple calculator like as IOS default calculator,
+This application is developed in SwiftUI, demonstrating simple calculator with similar UI IOS default calculator.
+This application is having some primary arithmatioc operation option like as +, -, *, /.
 This application is developed in Swift UI so it will not run on IOS below version IOS-13. 
 
 **IDE Used** 
